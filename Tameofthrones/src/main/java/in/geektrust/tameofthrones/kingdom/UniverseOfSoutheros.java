@@ -1,7 +1,15 @@
 package in.geektrust.tameofthrones.kingdom;
 
+/**
+* Class for UniverseOfSoutheros.
+* 
+*/
 public class UniverseOfSoutheros {
     
+    /**
+    * Inner concrete class for Space kingdom extending Kingdom abstract class.
+    * 
+    */
     public static class SpaceKingdom extends Kingdom {
 
         private static final String KINGDOM = "SPACE";
@@ -28,7 +36,11 @@ public class UniverseOfSoutheros {
         }
         
     }
-
+    
+    /**
+    * Inner concrete class for Land kingdom extending Kingdom abstract class.
+    * 
+    */
     public static class LandKingdom extends Kingdom {
 
         private static final String KINGDOM = "LAND";
@@ -56,6 +68,10 @@ public class UniverseOfSoutheros {
         
     }
 
+    /**
+    * Inner concrete class for Water kingdom extending Kingdom abstract class.
+    * 
+    */
     public static class WaterKingdom extends Kingdom {
 
         private static final String KINGDOM = "WATER";
@@ -83,6 +99,10 @@ public class UniverseOfSoutheros {
         
     }
 
+    /**
+    * Inner concrete class for Ice kingdom extending Kingdom abstract class.
+    * 
+    */
     public static class IceKingdom extends Kingdom {
 
         private static final String KINGDOM = "ICE";
@@ -110,6 +130,10 @@ public class UniverseOfSoutheros {
     
     }
 
+    /**
+    * Inner concrete class for Air kingdom extending Kingdom abstract class.
+    * 
+    */
     public static class AirKingdom extends Kingdom {
 
         private static final String KINGDOM = "AIR";
@@ -137,6 +161,10 @@ public class UniverseOfSoutheros {
         
     }
 
+    /**
+    * Inner concrete class for Fire kingdom extending Kingdom abstract class.
+    * 
+    */
     public static class FireKingdom extends Kingdom {
 
         private static final String KINGDOM = "FIRE";

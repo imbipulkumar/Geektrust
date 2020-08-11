@@ -10,12 +10,26 @@ import java.util.Scanner;
 import in.geektrust.tameofthrones.agoldencrown.AGoldenCrown;
 import in.geektrust.tameofthrones.agoldencrown.AGoldenCrownImpl;
 
+/**
+* Driver class having main.
+* 
+*/
 public class TameOfThrones {
 
+	/**
+	* Main method read input file and prepare appropriate
+	* data structure which passed to a solver class to get the output.
+	* @param args command-line arguments.
+	* @exception ArrayIndexOutOfBoundsException if no command-line arguments is passed.
+	* @exception FileNotFoundException if invalid path to input file is passed.
+	* 
+	*/
 	public static void main(String[] args) throws FileNotFoundException {
+		if (args.length == 0) {
+			throw new ArrayIndexOutOfBoundsException("Absolute path to input file is not passed!");
+		}
 		List<ArrayList<String>> messages = new ArrayList<ArrayList<String>>();
 		File input = new File(args[0]);
-		// "C:\\Users\\BIPUL KUMAR\\Documents\\Geektrust\\Tameofthrones\\src\\main\\resources\\SampleInput1.txt"
 		Scanner scanner = new Scanner(input);
 		while (scanner.hasNextLine()) {
 			String message = scanner.nextLine();

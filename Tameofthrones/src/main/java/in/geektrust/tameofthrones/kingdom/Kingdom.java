@@ -1,7 +1,14 @@
 package in.geektrust.tameofthrones.kingdom;
 
+/**
+* Abstract class for Kingdom.
+* 
+*/
 public abstract class Kingdom {
 
+    /**
+    * Secret message received from King Shan.
+    */
     private String secretMsg;
 
     public void setSecretMsg(String secretMsg) {

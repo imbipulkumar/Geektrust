@@ -9,10 +9,20 @@ import in.geektrust.tameofthrones.kingdomfactory.KingdomFactory;
 import in.geektrust.tameofthrones.seasarcipher.SeasarCipher;
 import in.geektrust.tameofthrones.seasarcipher.SeasarCipherImpl;
 
-
+/**
+* Concrete class implementing AGoldenCrown interface.
+* 
+*/
 public class AGoldenCrownImpl implements AGoldenCrown {
     
+    /**
+    * Messages sent by King Shan to other kingdoms.
+    */
     private List<ArrayList<String>> messages;
+
+    /**
+    * Kingdoms allegiance to King Shan.
+    */
     private List<String> allegiances;
 
 	public AGoldenCrownImpl(List<ArrayList<String>> messages) {
@@ -22,6 +32,15 @@ public class AGoldenCrownImpl implements AGoldenCrown {
         sendMessages();
     }
 
+    /**
+    * Checks if the secret message to a kingdom 
+    * contains the kingdom emblem
+    * @param secretMsg secret message sent to a kingdom.
+    * @param emblem emblem of a kingdom.
+    * @return true if the secret message contains the emblem of the 
+    * kingdom to which the secret message is sent and false otherwise.
+    *
+    */
     private boolean isContain(String secretMsg, String emblem) {
         HashMap<Character, Integer> charFreq = new HashMap<Character, Integer>();
         Character c;
@@ -48,6 +67,12 @@ public class AGoldenCrownImpl implements AGoldenCrown {
         return charFreq.isEmpty();
     }
 
+    /**
+    * Checks if a kingdom is allegient to King Shan.
+    * @param kingdom a kingdom of Universe Of Southeros.
+    * @return true if the kingdom is allegient to King Shan and false otherwise.
+    *
+    */
     private boolean isAllegiant(Kingdom kingdom) {
         SeasarCipher seasarcipher = SeasarCipherImpl.getSeasarCipher();
         String decryptedMsg = seasarcipher.decrypt(kingdom.getSecretMsg(), kingdom.getSECRET_KEY());
@@ -57,6 +82,10 @@ public class AGoldenCrownImpl implements AGoldenCrown {
         return false;
     }
 
+    /**
+    * Send secret messages of King Shan to their respective kingdoms.
+    *
+    */
     private void sendMessages() {
         Kingdom kingdom;
         for (ArrayList<String> message : messages) {
@@ -67,6 +96,11 @@ public class AGoldenCrownImpl implements AGoldenCrown {
         }
     }
 
+    /**
+    * Concrete method overriding ruler method of the implementing interface.
+    * Output the Ruler and allies kingdoms.
+    *
+    */
     @Override
     public void ruler() {
         final int WINS = 3;

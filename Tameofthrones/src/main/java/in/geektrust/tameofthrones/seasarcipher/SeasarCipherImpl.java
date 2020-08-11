@@ -1,5 +1,9 @@
 package in.geektrust.tameofthrones.seasarcipher;
 
+/**
+* Singleton concrete class implementing SeasarCipher interface.
+*
+*/
 public class SeasarCipherImpl implements SeasarCipher {
 
     private static final SeasarCipherImpl INSTANCE = new SeasarCipherImpl();
@@ -11,6 +15,14 @@ public class SeasarCipherImpl implements SeasarCipher {
         return INSTANCE;
     }
 
+    /**
+    * Concrete method overriding decrypt method of the implementing interface.
+    * Decrypt the secret message using the secret key.
+    * @param secretMsg secret message sent by King Shan.
+    * @param secretKey secret key to decrypt the secret message.
+    * @return decrypted message.
+    *
+    */
     @Override
     public String decrypt(String secretMsg, int secretKey) {
         

@@ -3,6 +3,11 @@ package in.geektrust.tameofthrones.kingdomfactory;
 import in.geektrust.tameofthrones.kingdom.Kingdom;
 import in.geektrust.tameofthrones.kingdom.UniverseOfSoutheros;
 
+/**
+* Factory class KingdomFactory creates the objects of 
+* concrete classes extending Kingdom abstarct class.
+* 
+*/
 public class KingdomFactory {
     
     public static Kingdom getKingdom(String kingdom, String secretMsg) {
