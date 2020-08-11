@@ -1,0 +1,8 @@
+Q. How to build this project?
+A. gradle clean build
+
+Q. How to execute this project?
+A. java -jar <path_to/geektrust.jar> <absolute_path_to_input_file>
+
+Q. What gradle tasks are defined?
+A. Build, javadoc, test, etc.

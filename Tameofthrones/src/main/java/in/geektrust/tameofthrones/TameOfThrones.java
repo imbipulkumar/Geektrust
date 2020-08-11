@@ -33,7 +33,7 @@ public class TameOfThrones {
 		Scanner scanner = new Scanner(input);
 		while (scanner.hasNextLine()) {
 			String message = scanner.nextLine();
-			messages.add(new ArrayList<String>(Arrays.asList(message.split(" "))));
+			messages.add(new ArrayList<String>(Arrays.asList(message.split(" ", 2))));
 		}
 		AGoldenCrown aGoldenCrown = new AGoldenCrownImpl(messages);
 		aGoldenCrown.ruler();

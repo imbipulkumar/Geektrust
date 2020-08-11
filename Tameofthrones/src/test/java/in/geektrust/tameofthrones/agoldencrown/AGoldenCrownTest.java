@@ -20,7 +20,7 @@ public class AGoldenCrownTest {
 
     private AGoldenCrownImpl aGoldenCrown;
     private OutputStream outputStream;
-    private String expectedOutput = "SPACE AIR LAND ICE ";
+    private String expectedOutput = "SPACE FIRE AIR WATER ";
     private String actualOutput;
     private List<ArrayList<String>> messages = new ArrayList<ArrayList<String>>() {
         /**
@@ -29,9 +29,11 @@ public class AGoldenCrownTest {
         private static final long serialVersionUID = 1L;
 
         {
-            add(new ArrayList<String>(Arrays.asList("AIR", "ROZO")));
-            add(new ArrayList<String>(Arrays.asList("LAND", "FAIJWJSOOFAMAU")));
-            add(new ArrayList<String>(Arrays.asList("ICE", "STHSTSTVSASOS")));
+            add(new ArrayList<String>(Arrays.asList("LAND", "PANDAUFSI")));
+            add(new ArrayList<String>(Arrays.asList("ICE", "MAMMOTH THVAO")));
+            add(new ArrayList<String>(Arrays.asList("FIRE", "DRAGON JXGMUT")));
+            add(new ArrayList<String>(Arrays.asList("AIR", "ZORRO")));
+            add(new ArrayList<String>(Arrays.asList("WATER", "OCTO VJAVWBZ PUS")));
         }
     };
 

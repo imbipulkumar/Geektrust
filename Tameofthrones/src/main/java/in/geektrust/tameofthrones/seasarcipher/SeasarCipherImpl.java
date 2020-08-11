@@ -32,22 +32,25 @@ public class SeasarCipherImpl implements SeasarCipher {
 
         for (int i = 0; i < secretMsg.length(); ++i) {
             c = secretMsg.charAt(i);
-            if (Character.isUpperCase(c)) {
-                key = (c - 'A' - secretKey) % 26;
-                if (key < 0) {
-                    decryptedMsg += (char) ('Z' + 1 + key);
+            if (Character.isLetter(c)) {
+                if (Character.isUpperCase(c)) {
+                    key = (c - 'A' - secretKey) % 26;
+                    if (key < 0) {
+                        decryptedMsg += (char) ('Z' + 1 + key);
+                    } else {
+                        decryptedMsg += (char) ('A' + key);
+                    }
                 } else {
-                    decryptedMsg += (char) ('A' + key);
+                    key = (c - 'a' - secretKey) % 26;
+                    if (key < 0) {
+                        decryptedMsg += (char) ('z' + 1 + key);
+                    } else {
+                        decryptedMsg += (char) ('a' + key);
+                    }
                 }
             } else {
-                key = (c - 'a' - secretKey) % 26;
-                if (secretKey < 0) {
-                    decryptedMsg += (char) ('z' + 1 + key);
-                } else {
-                    decryptedMsg += (char) ('a' + key);
-                }
+                decryptedMsg += c;
             }
-            
         }
 
         return decryptedMsg;

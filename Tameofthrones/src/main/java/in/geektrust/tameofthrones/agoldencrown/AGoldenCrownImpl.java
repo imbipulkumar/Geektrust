@@ -2,7 +2,9 @@ package in.geektrust.tameofthrones.agoldencrown;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import in.geektrust.tameofthrones.kingdom.Kingdom;
 import in.geektrust.tameofthrones.kingdomfactory.KingdomFactory;
@@ -25,9 +27,15 @@ public class AGoldenCrownImpl implements AGoldenCrown {
     */
     private List<String> allegiances;
 
+    /**
+    * Unique kingdoms allegiance to King Shan.
+    */
+    private Set<String> allegiancesSet;
+
 	public AGoldenCrownImpl(List<ArrayList<String>> messages) {
         this.messages = messages;
         allegiances = new ArrayList<String>();
+        allegiancesSet = new HashSet<String>();
         
         sendMessages();
     }
@@ -89,9 +97,12 @@ public class AGoldenCrownImpl implements AGoldenCrown {
     private void sendMessages() {
         Kingdom kingdom;
         for (ArrayList<String> message : messages) {
-            kingdom = KingdomFactory.getKingdom(message.get(0) , message.get(1));
-            if (isAllegiant(kingdom)) {
-                allegiances.add(message.get(0));
+            if (!allegiancesSet.contains(message.get(0))) {
+                kingdom = KingdomFactory.getKingdom(message.get(0) , message.get(1));
+                if (isAllegiant(kingdom)) {
+                    allegiancesSet.add(message.get(0));
+                    allegiances.add(message.get(0));
+                }
             }
         }
     }
