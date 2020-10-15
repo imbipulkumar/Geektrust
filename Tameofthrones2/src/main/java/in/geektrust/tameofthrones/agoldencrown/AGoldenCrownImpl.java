@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import in.geektrust.tameofthrones.kingdom.Kingdom;
 import in.geektrust.tameofthrones.seasarcipher.SeasarCipher;
@@ -35,14 +34,14 @@ public class AGoldenCrownImpl implements AGoldenCrown {
     /**
      * Kingdoms allegiance to King Shan.
      */
-    private Set<String> allegiances;
+    private List<String> allegiances;
 
     public AGoldenCrownImpl(String filepath) {
         universeOfSoutheros = FixtureHelpers.universeOfSoutheros("universeOfSoutheros.json");
 
         messages = FixtureHelpers.readInputFile(filepath);
 
-        allegiances = new HashSet<String>();
+        allegiances = new ArrayList<String>();
 
         sendMessages();
     }
